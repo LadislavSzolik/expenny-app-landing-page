@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expenny app</title>
+    <style>
+        html, body, figure {
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI Adjusted","Segoe UI","Liberation Sans",sans-serif;;
+            padding: 0;
+            margin: 0;
+            font-size: 18px;
+        }
+        h1 {
+            font-size: 64px;
+            line-height: 1.0416666667;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+        }
+        h2 {
+            text-align: center;
+            font-size: 48px;
+            line-height: 1.125;
+            font-weight: 600;
+            padding-block-start:56px
+        }
+        .expenses-screen {
+            top: 14px;
+            left: 16px;
+            z-index: 3;
+            position: absolute;
+        }
+
+        .mobile-frame {
+            z-index: 4;
+            background-image: url("/assets/iphone14_frame_2x.png");
+            width: 280px;
+            height: 567px;
+            background-size: 280px 567px;
+            position: absolute;
+        }
+        .frame-screen-wrapper {
+            width: 280px;
+            height: 567px;
+            position: relative;
+        }
+
+        .expenses-screen-half {
+            background-image: url("/assets/expenses.png");
+            top: 26px;
+            left: 30px;
+            width: 478.8px;
+            height: 519px;
+            background-size: 478.8px 1038px;
+            z-index: 3;
+            position: absolute;
+            background-repeat: no-repeat;
+        }
+
+        .mobile-frame-half {
+            z-index: 4;
+            background-image: url("/assets/iphone14_frame_2x.png");
+            width: 538px;
+            height: 545px;
+            background-size: 538px 1090px;
+            position: absolute;
+            background-repeat: no-repeat;
+        }
+        .device-gradient {
+            z-index: 5;
+            background-image: linear-gradient(180deg, rgba(255,255,255,0),#FFF);
+            width: 538px;
+            height: 200px;
+            position: absolute;
+        }
+        .frame-screen-wrapper-half {
+            width: 538px;
+            height: 545px;
+            display: grid;
+            align-items: end;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .appstore-badge {
+            background-image: url("/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg");
+            width: 160px;
+            height: 54px;
+            background-size: 100% 100%;
+            display: block;
+        }
+        .feature-name {
+            font-size: 24px;
+            line-height: 1.125;
+            letter-spacing: .004em;
+            max-width: 400px;
+        }
+        .main-title-section {
+            display: flex;
+            justify-content:center;
+            flex-direction: column;
+        }
+        .hero-section {
+            display: flex;
+            gap: 32px;
+        }
+        @media (max-width: 860px) {
+            .hero-section{
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .section {
+            max-width: 1024px;
+            padding: 42px;
+            margin: auto auto;
+        }
+        .feature-list {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        @media (max-width: 860px) {
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 18px;
+            padding-block: 36px;
+            max-width: 280px;
+        }
+        .contact-section {
+            text-align: center;
+            margin-block-end: 36px;
+        }
+        .faq-item {
+            margin-block: 48px;
+        }
+        .faq-item p:first-child {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="section">
+    <div class="hero-section">
+        <div class="main-title-section">
+            <h1>Effortlessly Track Your Expenses with Expenny</h1>
+            <figure class="appstore-badge"></figure>
+        </div>
+        <div class="frame-screen-wrapper-half">
+            <div class="device-gradient"></div>
+            <div class="expenses-screen-half"></div>
+            <div class="mobile-frame-half"></div>
+        </div>
+    </div>
+
+
+    <h2 >Features</h2>
+
+    <div class="feature-list">
+        <div class="feature-item">
+            <div class="frame-screen-wrapper">
+                <img class="expenses-screen" src="assets/expenses.png" height="539" width="248">
+                <div class="mobile-frame"></div>
+            </div>
+            <p class="feature-name">Record and categorize expenses with ease</p>
+        </div>
+
+
+        <div class="feature-item">
+            <div class="frame-screen-wrapper">
+                <img class="expenses-screen" src="assets/expenses.png" height="539" width="248">
+                <div class="mobile-frame"></div>
+            </div>
+            <p class="feature-name">Manage expense categories</p>
+
+        </div>
+
+        <div class="feature-item">
+            <div class="frame-screen-wrapper">
+                <img class="expenses-screen" src="assets/expenses.png" height="539" width="248">
+                <div class="mobile-frame"></div>
+            </div>
+            <p class="feature-name">View all your expenses or filter by specific category, along with the total spending</p>
+        </div>
+    </div>
+
+    <h2>FAQs</h2>
+    <div class="faq-item">
+        <p>Where will the data I enter the app be stored?</p>
+        <p>All the data you enter remains only on your device. There are no trackers. In the future I plan to release an option to sync between your devices.</p>
+    </div>
+
+    <div class="faq-item">
+        <p>Is it free?</p>
+        <p>Yes. There are many expense tracking apps available on App Store, but I like to develop apps and I wanted to create one that specifically suits my needs.</p>
+    </div>
+
+    <div class="faq-item">
+        <p>What about Android and other platforms?</p>
+        <p>For now it is only for iOS.</p>
+    </div>
+
+    <div class="faq-item">
+        <p>Are there any integrations?</p>
+        <p>Not yet.</p>
+    </div>
+
+    <div class="faq-item">
+        <p>Can I import expenses from Excel sheet?</p>
+        <p>Not yet. It is planned for the app to have an option to export and import CSV file.</p>
+    </div>
+    <div class="contact-section">
+        <h2>Contact</h2>
+        <p>If you have a feedback, or you want to place a feature request, you can contact me here: <a href="mailto:expenny.feedback@gmail.com" target="_blank">expenny.feedback[at]gmail.com</a> </p>
+    </div>
+
+
+
+
+
+
+<!--
+<div class="frame-screen-wrapper">
+    <img class="expenses-screen" src="assets/expenses.png" height="1038" width="478.8">
+    <div class="mobile-frame"></div>
+</div>
+-->
+
+
+
+</body>
+</html>
