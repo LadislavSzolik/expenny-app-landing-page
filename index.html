@@ -8,6 +8,13 @@
     <meta name="og:description" content="Expenny, simple expense tracking for iOS users">
     <meta name="description" content="Expenny, simple expense tracking for iOS users">
     <style>
+        :root {
+            --half-device-frame-width: 538px;
+            --half-device-frame-height: 545px;
+
+            --half-device-frame-width-sm:360px;
+            --half-device-frame-height-sm: 365px;
+        }
         html, body, figure {
             font-family: -apple-system,BlinkMacSystemFont,"Segoe UI Adjusted","Segoe UI","Liberation Sans",sans-serif;;
             padding: 0;
@@ -48,6 +55,24 @@
             position: relative;
         }
 
+        /* Hero image  */
+        .frame-screen-wrapper-half {
+            width: var(--half-device-frame-width);
+            height: var(--half-device-frame-height);
+            display: grid;
+            align-items: end;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .device-frame-half {
+            z-index: 4;
+            background-image: url("/assets/iphone14_frame_2x.png");
+            width: var(--half-device-frame-width);
+            height: var(--half-device-frame-height);
+            background-size: var(--half-device-frame-width) 1090px;
+            position: absolute;
+            background-repeat: no-repeat;
+        }
         .expenses-screen-half {
             background-image: url("/assets/expenses.png");
             top: 26px;
@@ -59,31 +84,14 @@
             position: absolute;
             background-repeat: no-repeat;
         }
-
-        .mobile-frame-half {
-            z-index: 4;
-            background-image: url("/assets/iphone14_frame_2x.png");
-            width: 538px;
-            height: 545px;
-            background-size: 538px 1090px;
-            position: absolute;
-            background-repeat: no-repeat;
-        }
         .device-gradient {
             z-index: 5;
             background-image: linear-gradient(180deg, rgba(255,255,255,0),#FFF);
-            width: 538px;
+            width: var(--half-device-frame-width);
             height: 200px;
             position: absolute;
         }
-        .frame-screen-wrapper-half {
-            width: 538px;
-            height: 545px;
-            display: grid;
-            align-items: end;
-            flex-shrink: 0;
-            position: relative;
-        }
+
 
         .appstore-badge {
             background-image: url("/assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg");
@@ -103,16 +111,17 @@
             justify-content:center;
             flex-direction: column;
         }
+        .app-logo {
+            background-image: url("/assets/expenny-app-logo.svg");
+            width: 82px;
+            height: 82px;
+            background-size: 100% 100%;
+        }
         .hero-section {
             display: flex;
             gap: 32px;
         }
-        @media (max-width: 860px) {
-            .hero-section{
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+
         .section {
             max-width: 1024px;
             padding: 42px;
@@ -122,12 +131,6 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-        }
-        @media (max-width: 860px) {
-            .feature-list {
-                flex-direction: column;
-                align-items: center;
-            }
         }
         .feature-item {
             display: flex;
@@ -148,18 +151,65 @@
         .faq-item p:first-child {
             font-weight: 600;
         }
+
+        @media (max-width: 860px) {
+            h1 {
+                font-size: 48px;
+            }
+            h2 {
+                font-size: 34px;
+                margin-bottom: 0px;
+            }
+
+            .hero-section{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .frame-screen-wrapper-half{
+                height: var(--half-device-frame-height-sm);
+                width: var(--half-device-frame-width-sm);
+            }
+            .device-frame-half {
+                width: var(--half-device-frame-width-sm);
+                height: var(--half-device-frame-height-sm);
+                background-size: var(--half-device-frame-width-sm) 729px;
+            }
+            .expenses-screen-half {
+                top: 17px;
+                left: 21px;
+                width: 320px;
+                height: 347px;
+                background-size: 320px 695px;
+            }
+            .device-gradient {
+                width: var(--half-device-frame-width-sm);
+                height: 80px;
+            }
+
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-name {
+                margin-top: 0px;
+            }
+        }
     </style>
 </head>
 <body class="section">
     <div class="hero-section">
         <div class="main-title-section">
+            <div class="app-logo"></div>
             <h1>Effortlessly Track Your Expenses with Expenny</h1>
-            <figure class="appstore-badge"></figure>
+            <a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1666233678" target="_blank">
+                <figure class="appstore-badge"></figure>
+            </a>
         </div>
         <div class="frame-screen-wrapper-half">
             <div class="device-gradient"></div>
             <div class="expenses-screen-half"></div>
-            <div class="mobile-frame-half"></div>
+            <div class="device-frame-half"></div>
         </div>
     </div>
 
